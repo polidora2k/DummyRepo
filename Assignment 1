@@ -1,1 +1,24 @@
+import java.util.ArrayList;
 
+public class Assignment1 {
+
+	public static void main(String[] args) {
+		//Create ArrayList to hold the colors.
+		ArrayList<String> colors = new ArrayList<String>();
+		
+		//Add the colors to the list.
+		colors.add("White");
+		colors.add("Orange");
+		colors.add("Green");
+		colors.add("Yellow");
+		colors.add("Red");
+		
+		//Check whether Red or Orange are in the list and print accordingly.
+		if (colors.contains("Red") || colors.contains("Orange")) {
+			System.out.println("Have dinner in a restaurant.");
+		} else {
+			System.out.println("Have dinner at home.");
+		}
+	}
+
+}
