@@ -1,1 +1,56 @@
+import java.util.HashMap;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
+public class Assignment2 {
+
+	public static void main(String[] args) {
+		//Create the HashMap.
+		HashMap<String, String> map = new HashMap<String, String>(4);
+		Collection<Entry<String, String>> entryCollection;
+		Iterator entryIter;
+		
+		//Add the key value pairs.
+		map.put("Eclipse", "Free Open Source IDE");
+		map.put("Ruby Mine", "Enterprise IDE, It's expensive");
+		map.put("Visual Studio", "Enterprise IDE, It's expensive");
+		map.put("Intellij", "Free Open Source IDE");
+		
+		//Print the value associated with the 'Eclipse" key.
+		System.out.printf("The value associated with Eclipse is %s\n", map.get("Eclipse"));
+
+		//Update the value of the 'Eclipse' key to 'It is best!' and print the new value.
+		map.replace("Eclipse", "It is best!");
+		System.out.printf("The value associated with Eclipse is %s\n", map.get("Eclipse"));
+		
+		//Remove the 'Eclipse' key and value from the map
+		map.remove("Eclipse");
+		System.out.printf("The value associated with Eclipse is %s\n", map.get("Eclipse"));
+		
+		//Print the total number of items in the map
+		System.out.printf("The total number of items in the map is %d\n", map.size());
+		
+		entryCollection = map.entrySet();
+		
+		entryIter = entryCollection.iterator();
+		
+		//Iterate through the map with an iterator
+		while (entryIter.hasNext()) {
+			System.out.printf("%s\n", entryIter.next());
+		}
+		
+		//Iterate through the map with a loop
+		for (Entry element: entryCollection) {
+			System.out.printf("%s : %s\n", (String)element.getKey(), (String)element.getValue());
+		}
+		
+		//Clear the map
+		map.clear();
+		
+		//Print cleared map
+		System.out.printf("%s", map);
+	}
+
+}
 
